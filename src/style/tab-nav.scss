@@ -2,6 +2,8 @@
   display: grid;
 
   grid-template-rows: [tab-s] 50px [tab-e content-s] 1fr [content-e];
+
+  height: 100%;
   &__tabs {
     grid-row: tab-s/tab-e;
 
