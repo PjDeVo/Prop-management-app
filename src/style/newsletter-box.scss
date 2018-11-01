@@ -1,4 +1,5 @@
 .newsletter-box {
+  align-content: center;
 
   height: 16rem;
   width: 16rem;
@@ -7,6 +8,10 @@
   color: $color-red-BA;
   display: grid;
   justify-items: center;
+  grid-template-rows: [s] 8.1rem [m] 2.3rem [e]; 
+  grid-template-columns: [s] 1fr [e];
+  
+  
   
   &__day {
     font-size: 6.7rem;
@@ -14,7 +19,8 @@
     align-self: end;
     margin-bottom: 1rem;
 
-
+    grid-row: s/m;
+    grid-column: s/e;
   }
 
   &__month-year {
@@ -22,5 +28,21 @@
     line-height: 2.3rem;
     align-self: start;
 
+    grid-row: m/e;
+    grid-column: s/e;
+  }
+
+  &__point {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    grid-column: s/e;
+    grid-row: s/e;
+    align-self: center;
+    justify-self: end;
+    transform: translateX(54%) rotate(45deg);
+    border: .2rem solid $color-red-BA;
+    border-bottom: none;
+    border-left: none;
   }
 }
