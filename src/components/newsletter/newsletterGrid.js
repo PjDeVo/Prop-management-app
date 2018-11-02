@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import NewsletterBox from './newsletterBox'
 
 import NewsletterArchive from './newsletterArchive';
+import NewsletterLatest from './newsletterLatest';
+
 
 class NewsletterGrid extends Component {
   render() {
@@ -10,6 +12,7 @@ class NewsletterGrid extends Component {
       <div className='newsletter-grid'>
         <NewsletterBox date={new Date()} />
         < NewsletterArchive />
+        <NewsletterLatest />
 
       </div>
     )
