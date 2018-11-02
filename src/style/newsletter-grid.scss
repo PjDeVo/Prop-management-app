@@ -6,4 +6,9 @@
   grid-template-columns: [ box-s archive-s] 16rem [box-e archive-e latest-s] 960px [latest-e];
 
   justify-content: center;
+
+  margin-top: 4.7rem;
+
+  grid-row-gap: 3.85rem;
+  grid-column-gap: 6.1rem;
 }
