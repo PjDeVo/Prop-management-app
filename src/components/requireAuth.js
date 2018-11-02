@@ -21,7 +21,7 @@ export default function (ComposedComponent) {
 
     }
     render() {
-      return <ComposedComponent />
+      return <ComposedComponent {...this.props} />
     }
   }
   function mapStateToProps(state) {
