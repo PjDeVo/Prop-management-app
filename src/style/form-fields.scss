@@ -85,9 +85,9 @@
     }
 
     &__danger {
-        border: none;
+        background-color: $color-red-BA;
         color: white;
-        background-color: red;
+        background-color: $color-red-BA;
     }
 }
 
