@@ -35,6 +35,7 @@ class SigninForm extends Component {
           title="Login"
           component={FormButton}
         />
+
         <div className='sign-in-form__text-links'>
           <TextLink to='/forgot' text='Forgot Password' />
           <TextLink to='/signup' text='Not a member? Register here' />
