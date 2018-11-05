@@ -24,10 +24,7 @@
 .form-input,
 .form-textarea {
     &__title {
-        color: $color-red-BA;
-        font-size: 1.8rem;
-        font-weight: 500;
-        line-height: 2.3rem;
+        @include red-title;
     }
     &__input {
         height: 4rem;
@@ -105,6 +102,22 @@
         background-color: $color-red-BA;
         color: white;
         background-color: $color-red-BA;
+    }
+}
+
+//IMAGE
+.form-image {
+    display: flex;
+    flex-direction: column;
+
+    &__title{
+        @include red-title;
+        margin-bottom: 2rem;
+    }
+
+    &__image{
+        width: 16rem;
+        height: 13.7rem;
     }
 }
 

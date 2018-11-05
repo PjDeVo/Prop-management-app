@@ -70,11 +70,9 @@ export class FormImage extends Component {
         <label className='form-image__title'>{title}</label>
         <img
           className='form-image__image'
-          type={type}
-          {...input}
           src={imageUrl}
         />
-        {/*replace button/input goes here  */}
+        <input {...input} type={type} />
       </div>
     )
   }
