@@ -17,7 +17,9 @@
     }
 
     &__body {
+        grid-row: 3;
         margin-top: 2rem;
+        
     }
 
     &__submit, 
@@ -32,5 +34,11 @@
 
     &__cancel {
         transform: translateX(-15.5rem);
+    }
+
+    &__image {
+        grid-row: 3;
+        grid-column: s;
+        align-self: end;
     }
 }
