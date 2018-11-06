@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
+
 
 class NewsletterDetail extends Component {
+
+  componentDidMount() {
+    this.props.fetchNewsletterWithId(this.props.match.params.id);
+  }
   render() {
+    console.log(this.props.newsletterToEdit);
     return (
       <div className='newsletter-detail'>
         NewsletterDetail
@@ -9,5 +17,9 @@ class NewsletterDetail extends Component {
     )
   }
 }
+function mapStateToProps(state) {
+  const { newsletterToEdit } = state.newsletters;
+  return { newsletterToEdit };
+}
 
-export default NewsletterDetail
+export default connect(mapStateToProps, actions)(NewsletterDetail);
