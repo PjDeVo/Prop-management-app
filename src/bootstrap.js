@@ -24,7 +24,7 @@ import Signin from './components/auth/signin';
 import Dashboard from './components/dashboard';
 import NewNewsletter from './components/newsletter/newsletterNew';
 import EditNewsletter from './components/newsletter/newsletterEdit';
-import NewsletterDetail from './components/newsletter/newsLetterDetail';
+import NewsletterDetail from './components/newsletter/newsletterDetail';
 
 
 
