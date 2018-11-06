@@ -23,6 +23,7 @@ import Signin from './components/auth/signin';
 
 import Dashboard from './components/dashboard';
 import NewNewsletter from './components/newsletter/newsletterNew'
+import EditNewsletter from './components/newsletter/newsletterEdit'
 
 
 
@@ -38,6 +39,7 @@ function main() {
 
             <Route path='/dashboard' component={requireAuth(Dashboard)} />
             <Route path='/newsletter/new' component={requireAuth(NewNewsletter)} />
+            <Route path='/newsletter/edit/:id' component={requireAuth(EditNewsletter)} />
           </Layout>
         </Switch>
       </Router>
