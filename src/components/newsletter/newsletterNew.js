@@ -24,7 +24,7 @@ class NewNewsletter extends Component {
     return (
       <div className='new-newsletter'>
         <NewNewsletterForm
-          title='New Newsletter'
+          fromTitle='New Newsletter'
           onCancel={() => this.onCancel()}
           onSubmit={(event) => this.onSubmit(event)} />
       </div>

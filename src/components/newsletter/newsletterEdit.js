@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions'
+
 import NewNewsletterForm from './newsletterNewForm'
 
 class EditNewsletter extends Component {
@@ -21,15 +24,16 @@ class EditNewsletter extends Component {
   };
 
   componentDidMount() {
-    // this.props.fetchNewsletterWithId()
-    console.log(this.props.match.params.id);
+    this.props.fetchNewsletterWithId(this.props.match.params.id);
+
   }
 
   render() {
     return (
       <div className='new-newsletter'>
         <NewNewsletterForm
-          title='Edit Newsletter'
+          newsletterToEdit={this.props.newsletterToEdit}
+          formTitle='Edit Newsletter'
           onCancel={() => this.onCancel()}
           onSubmit={(event) => this.onSubmit(event)} />
       </div>
@@ -37,4 +41,12 @@ class EditNewsletter extends Component {
   }
 }
 
-export default EditNewsletter;
+function mapStateToProps(state) {
+  const { newsletterToEdit } = state.newsletters;
+  return {
+    newsletterToEdit
+  }
+}
+
+
+export default connect(null, actions)(EditNewsletter);
