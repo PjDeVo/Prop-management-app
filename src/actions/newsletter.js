@@ -1,5 +1,6 @@
 import {
-  SET_NEWSLETTERS
+  SET_NEWSLETTERS,
+  FETCH_NEWSLETTER_ID
 } from './types';
 
 
@@ -28,5 +29,12 @@ export function fetchNewsletters() {
   return {
     type: SET_NEWSLETTERS,
     payload: response.data
+  }
+}
+
+export function fetchNewsLetterWithId(id) {
+  return {
+    type: FETCH_NEWSLETTER_ID,
+    payload: id
   }
 }
