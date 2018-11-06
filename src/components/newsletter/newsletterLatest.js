@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Button from '../button';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class NewsletterLatest extends Component {
 
@@ -22,4 +24,12 @@ class NewsletterLatest extends Component {
   }
 }
 
-export default NewsletterLatest;
+function mapsStateToProps(state) {
+  const { newsletters } = state.newsletters;
+  const latestNewsletter = newsletters[0];
+  return {
+    ...latestNewsletter
+  }
+}
+
+export default connect(mapsStateToProps)(NewsletterLatest);
