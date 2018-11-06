@@ -49,4 +49,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(null, actions)(EditNewsletter);
+export default connect(mapStateToProps, actions)(EditNewsletter);
