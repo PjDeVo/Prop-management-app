@@ -27,10 +27,11 @@ class RequestsItem extends Component {
             className="requests-item__description-img"
             src="http://via.placeholder.com/160x94"
           />
-          <p className="requests-item__description-text" />
-          Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
-          Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-          Lorem Ipsum
+          <p className="requests-item__description-text">
+            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem
+            Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+            Lorem Ipsum
+          </p>
         </div>
       </div>
     );
