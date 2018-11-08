@@ -1,6 +1,6 @@
 .requests-item {
   display: grid;
-  grid-template-rows: [s title-s] 34px [title-e tenant-s] 5px [tenant-e e];
+  grid-template-rows: [s title-s] 34px [title-e tenant-s] 34px [tenant-e e];
   grid-template-columns: [icon-s] 100px [icon-e s title-s] minmax(40px, 1fr) [title-e arrow-s] 68px [arrow-e date-s] 100px [date-e e] 60px;
 
   align-items: center;
@@ -39,24 +39,15 @@
   }
   &__description {
     grid-column: s/e;
-    // grid-row: description-s/description-e;
+  }
+  .item-description {
     display: grid;
     grid-column-gap: 4rem;
     grid-auto-flow: column;
   }
-
-  &__description-img {
-  }
-
-  &__description-text {
-  }
 }
 
 .requests-item {
-  padding: 6px 0px;
-  &:hover {
-    background-color: #f8f8f8;
-  }
   &__icon {
     font-size: 2.7rem;
   }
@@ -67,10 +58,9 @@
       line-height: 2.3rem;
       margin-right: 2.5rem;
     }
-
     &__arrow {
       color: $color-gray-4D;
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
   &__tenant-unit {
@@ -79,23 +69,21 @@
     font-size: 1.3rem;
     line-height: 1.6rem;
   }
-
   &__date {
     font-size: 1.4rem;
     line-height: 1.7rem;
   }
   &__move {
   }
-  &__description {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  &__description-img {
-  }
-
-  &__description-text {
-    font-size: 1.4rem;
-    line-height: 1.7rem;
+  .item-description {
+    margin-top: 1.4rem;
+    margin-bottom: 2.2rem;
+    &__img {
+      object-fit: cover;
+    }
+    &__text {
+      font-size: 1.4rem;
+      line-height: 1.7rem;
+    }
   }
 }
