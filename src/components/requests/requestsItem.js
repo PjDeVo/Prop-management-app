@@ -10,10 +10,16 @@ class RequestsItem extends Component {
           className="requests-item__icon"
           icon="fas fa-exclamation-triangle"
         />
-        <div className="requests-item__title">Breh da Fuck</div>
+        <div className="requests-item__title">
+          <div className="requests-item__title__text">Breh da Fuck</div>
+          <Icon
+            className="requests-item__title__arrow"
+            icon="fas fa-sort-down"
+          />
+        </div>
 
         <div className="requests-item__tenant-unit">PattyCakes - unit 115</div>
-        <Icon className="requests-item__arrow" icon="fas fa-sort-down" />
+
         <div className="requests-item__date">05/29/1995</div>
         <Button
           icon="fas fa-wrench"
