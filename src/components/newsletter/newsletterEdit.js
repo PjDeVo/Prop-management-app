@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import { connect } from "react-redux";
+import * as actions from "../../actions";
 
 import NewNewsletterForm from "./newsletterNewForm";
 
@@ -28,7 +28,9 @@ class EditNewsletter extends Component {
           newsletterToEdit={this.props.newsletterToEdit}
           onCancel={() => this.onCancel()}
           onSubmit={event => this.onSubmit(event)}
-          formTitle='Edit Newsletter'
+          formTitle="Edit Newsletter"
+          fieldOneTitle="Newsletter Title"
+          fieldTwoTitle="Body"
         />
       </div>
     );
@@ -39,7 +41,10 @@ function mapStateToProps(state) {
   const { newsletterToEdit } = state.newsletters;
   return {
     newsletterToEdit
-  }
+  };
 }
 
-export default connect(mapStateToProps, actions)(EditNewsletter);
+export default connect(
+  mapStateToProps,
+  actions
+)(EditNewsletter);

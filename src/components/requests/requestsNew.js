@@ -24,6 +24,10 @@ class NewRequest extends Component {
           formTitle="New Service Request"
           onCancel={() => this.onCancel()}
           onSubmit={event => this.onSubmit(event)}
+          fieldOnePlaceholder="Service Request Title"
+          fieldOneTitle="Service Request Title"
+          fieldTwoPlaceholder="Service Description Here"
+          fieldTwoTitle="Description"
         />
       </div>
     );
