@@ -4,12 +4,8 @@ import { reduxForm, Field } from "redux-form";
 import { FormTitle } from "../formTitle";
 import { FormInput, FormButton, FormTextArea, FormImage } from "../formFields";
 
-
 class NewNewsletterForm extends Component {
-
-
   render() {
-
     const { handleSubmit, formTitle, newsletterToEdit } = this.props;
 
     var title = null;
@@ -22,12 +18,9 @@ class NewNewsletterForm extends Component {
       imageUrl = newsletterToEdit.imageUrl;
     }
 
-
-
-
     return (
       <form onSubmit={handleSubmit} className="new-newsletter-form">
-        <FormTitle className="new-newsletter-form__title" text={FormTitle} />
+        <FormTitle className="new-newsletter-form__title" text={formTitle} />
         <Field
           className="new-newsletter-form__newsletter-title"
           placeholder=" Newsletter Title"
@@ -46,7 +39,6 @@ class NewNewsletterForm extends Component {
           title="Body"
           component={FormTextArea}
           editValue={body ? body : null}
-
         />
 
         <Field
@@ -57,8 +49,6 @@ class NewNewsletterForm extends Component {
           type="submit"
           title="Submit"
           component={FormButton}
-
-
         />
 
         <Field
@@ -69,7 +59,6 @@ class NewNewsletterForm extends Component {
           title="Cancel"
           component={FormButton}
           onClick={this.props.onCancel}
-
         />
 
         <Field
@@ -80,10 +69,7 @@ class NewNewsletterForm extends Component {
           title="Image"
           component={FormImage}
           imageUrl={imageUrl}
-
-
         />
-
       </form>
     );
   }
@@ -94,4 +80,3 @@ NewNewsletterForm = reduxForm({
 })(NewNewsletterForm);
 
 export default NewNewsletterForm;
-

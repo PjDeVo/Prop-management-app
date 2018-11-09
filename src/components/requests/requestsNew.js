@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import NewNewsletterForm from "./newsletterNewForm";
+import NewNewsletterForm from "../newsletter/newsletterNewForm";
 
-class NewNewsletter extends Component {
+class NewRequest extends Component {
   onSubmit = (fields, button) => {
     // if (button == 'submit') {
     //   this.props.history.push('/dashboard');
@@ -19,9 +19,9 @@ class NewNewsletter extends Component {
 
   render() {
     return (
-      <div className="new-newsletter">
+      <div className="new-request">
         <NewNewsletterForm
-          formTitle="New Newsletter"
+          formTitle="New Service Request"
           onCancel={() => this.onCancel()}
           onSubmit={event => this.onSubmit(event)}
         />
@@ -30,4 +30,4 @@ class NewNewsletter extends Component {
   }
 }
 
-export default NewNewsletter;
+export default NewRequest;
