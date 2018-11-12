@@ -43,8 +43,7 @@ function main() {
             <Route path="/signin" component={Signin} />
             <Route path="/signup" component={Signup} />
 
-            <Route path="/dashboard" component={Dashboard} />
-            {/* <Route path='/dashboard' component={requireAuth(Dashboard)} /> */}
+            <Route path="/dashboard" component={requireAuth(Dashboard)} />
 
             <Route
               path="/newsletter/new"

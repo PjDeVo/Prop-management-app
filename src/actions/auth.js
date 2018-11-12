@@ -1,47 +1,50 @@
+import axios from "axios";
 
-import axios from 'axios';
+import { ROOT_URL } from "../config";
 
-import { ROOT_URL } from '../config'
-
-import {
-  AUTHENTICATE_USER
-} from './types'
+import { AUTHENTICATE_USER } from "./types";
 
 export function signUp(fields, success) {
-  return function (dispatch) {
-    axios.post(`${ROOT_URL}/signUp`, fields)
+  return function(dispatch) {
+    axios
+      .post(`${ROOT_URL}/signUp`, fields)
       .then(response => {
         const { token } = response.data;
-        localStorage.setItem('token', token)
+        localStorage.setItem("token", token);
         dispatch({
           type: AUTHENTICATE_USER,
           payload: response.data
-        })
-        success()
+        });
+        success();
       })
 
       .catch(err => {
-        if (err) { console.log(err) }
-      })
-
-  }
+        if (err) {
+          console.log(err);
+        }
+      });
+  };
 }
 
 export function signIn(fields, success) {
-  return function (dispatch) {
-    axios.post(`${ROOT_URL}/signIn`, fields)
+  return function(dispatch) {
+    axios
+      .post(`${ROOT_URL}/signIn`, fields)
       .then(response => {
         console.log(response.data);
-        const { token } = response.data;
-        localStorage.setItem('token', token)
+
         dispatch({
           type: AUTHENTICATE_USER,
           payload: response.data
-        })
-        success()
+        });
+        const { token } = response.data;
+        localStorage.setItem("token", token);
+        success();
       })
       .catch(err => {
-        if (err) { console.log(err) }
-      })
-  }
+        if (err) {
+          console.log(err);
+        }
+      });
+  };
 }

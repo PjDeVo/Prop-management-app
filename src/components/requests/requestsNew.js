@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import NewNewsletterForm from "../newsletter/newsletterNewForm";
+import { connect } from "react-redux";
+
+import * as actions from "../../actions";
 
 class NewRequest extends Component {
   onSubmit = (fields, button) => {
@@ -10,7 +13,9 @@ class NewRequest extends Component {
     //   console.log('trying to submit backend');
 
     // }
-    console.log("trying to submit");
+    this.props.createNewRequest(this.props._id, {}, () => {
+      this.props.history.push("/dashboard");
+    });
   };
 
   onCancel = () => {
@@ -33,5 +38,15 @@ class NewRequest extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  const { _id } = state.auth.user;
+  return { _id };
+}
+
+NewRequest = connect(
+  mapStateToProps,
+  actions
+)(NewRequest);
 
 export default NewRequest;
