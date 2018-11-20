@@ -84,9 +84,18 @@ export class FormButton extends Component {
 }
 
 export class FormImage extends Component {
+  // constructor() {
+  //   super();
+
+  //   this.handleSelectedImage = this.handleSelectedImage.bind(this);
+  // }
   handleSelectedImage = event => {
+    const {
+      input: { onChange }
+    } = this.props;
     var image = document.getElementById("newsletter-new-image");
     image.src = URL.createObjectURL(event.target.files[0]);
+    onChange(event.target.files[0]);
   };
 
   render() {

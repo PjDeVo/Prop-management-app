@@ -13,6 +13,11 @@ class NewRequest extends Component {
     //   console.log('trying to submit backend');
 
     // }
+    const { title, body, image } = fields;
+    var formData = new FormData();
+    formData.append("title", title);
+    formData.append("body", body);
+    formData.append("image", image);
     this.props.createNewRequest(this.props._id, fields, () => {
       this.props.history.push("/dashboard");
     });
