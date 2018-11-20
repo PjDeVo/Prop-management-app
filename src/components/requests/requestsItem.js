@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Icon from "../icon";
 import Button from "../button";
 import AnimateHeight from "react-animate-height";
+import { ROOT_URL } from "../../config";
 
 class RequestsItem extends Component {
   constructor() {
@@ -24,6 +25,8 @@ class RequestsItem extends Component {
   };
 
   render() {
+    const { _id, title, body, date, imageURL, status } = this.props;
+    const parsedDate = new Date(date);
     return (
       <div id="requests-item" className="requests-item">
         <Icon
@@ -31,7 +34,7 @@ class RequestsItem extends Component {
           icon="fas fa-exclamation-triangle"
         />
         <div className="requests-item__title">
-          <div className="requests-item__title__text">Breh da Fuck</div>
+          <div className="requests-item__title__text">{title}</div>
           <Icon
             callback={() => this.toggleDropdown()}
             className="requests-item__title__arrow"
@@ -39,9 +42,12 @@ class RequestsItem extends Component {
           />
         </div>
 
-        <div className="requests-item__tenant-unit">PattyCakes - unit 115</div>
+        <div className="requests-item__tenant-unit"> Pat - unit 115</div>
 
-        <div className="requests-item__date">05/29/1995</div>
+        <div className="requests-item__date">
+          {parsedDate.getMonth() + 1}/{parsedDate.getDate()}/
+          {parsedDate.getFullYear() - 2000}
+        </div>
         <Button
           icon="fas fa-wrench"
           className="requests-item__move"
@@ -55,14 +61,9 @@ class RequestsItem extends Component {
             <div className="item-description">
               <img
                 className="item-description__img"
-                src="http://via.placeholder.com/160x94"
+                src={`${ROOT_URL}/${imageURL}`}
               />
-              <p className="item-description__text">
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-                Lorem Ipsum
-              </p>
+              <p className="item-description__text">{body}</p>
             </div>
           </AnimateHeight>
         </div>
