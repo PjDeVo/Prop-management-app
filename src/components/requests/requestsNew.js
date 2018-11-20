@@ -13,7 +13,7 @@ class NewRequest extends Component {
     //   console.log('trying to submit backend');
 
     // }
-    this.props.createNewRequest(this.props._id, {}, () => {
+    this.props.createNewRequest(this.props._id, fields, () => {
       this.props.history.push("/dashboard");
     });
   };
