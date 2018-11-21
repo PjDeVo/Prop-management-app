@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as actions from "../../actions";
+
 import Icon from "../icon";
 import Button from "../button";
 import AnimateHeight from "react-animate-height";
@@ -55,9 +58,7 @@ class RequestsItem extends Component {
         <Button
           icon="fas fa-wrench"
           className="requests-item__move"
-          callback={() =>
-            console.log("trying to move request item/change jawns status")
-          }
+          callback={() => this.props.changeStatus({ _id, status })}
         />
 
         <div className="requests-item__description">
@@ -75,5 +76,10 @@ class RequestsItem extends Component {
     );
   }
 }
+
+RequestsItem = connect(
+  null,
+  actions
+)(RequestsItem);
 
 export default RequestsItem;
