@@ -12,10 +12,10 @@ export function changeSelectedRequestType(boxType) {
 
 export function createNewRequest(userId, formData, success) {
   const token = localStorage.getItem("token");
-
+  console.log(formData);
   return function() {
     axios
-      .post(`${ROOT_URL}/requests/new`, formData, {
+      .post(`${ROOT_URL}/request/new`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           authorization: token

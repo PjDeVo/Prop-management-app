@@ -5,6 +5,9 @@ import AnimateHeight from "react-animate-height";
 import { ROOT_URL } from "../../config";
 
 class RequestsItem extends Component {
+  componentDidMount() {
+    console.log("junked");
+  }
   constructor() {
     super();
 
@@ -25,7 +28,8 @@ class RequestsItem extends Component {
   };
 
   render() {
-    const { _id, title, body, date, imageURL, status } = this.props;
+    const { _id, title, body, date, imageUrl, status } = this.props;
+
     const parsedDate = new Date(date);
     return (
       <div id="requests-item" className="requests-item">
@@ -61,7 +65,7 @@ class RequestsItem extends Component {
             <div className="item-description">
               <img
                 className="item-description__img"
-                src={`${ROOT_URL}/${imageURL}`}
+                src={`${ROOT_URL}/${imageUrl}`}
               />
               <p className="item-description__text">{body}</p>
             </div>

@@ -8,6 +8,7 @@ class Requests extends Component {
   render() {
     return (
       <div className="requests">
+        {console.log(this.props.requests)}
         {this.props.requests.map(requestItem => {
           return <RequestsItem {...requestItem} key={requestItem._id} />;
         })}

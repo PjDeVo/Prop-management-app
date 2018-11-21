@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 
 class NewRequest extends Component {
-  onSubmit = (fields, button) => {
+  onSubmit = fields => {
     // if (button == 'submit') {
     //   this.props.history.push('/dashboard');
     // } else {
@@ -13,12 +13,14 @@ class NewRequest extends Component {
     //   console.log('trying to submit backend');
 
     // }
+    console.log(fields, "bruh.");
     const { title, body, image } = fields;
     var formData = new FormData();
     formData.append("title", title);
     formData.append("body", body);
     formData.append("image", image);
 
+    console.log("bruh");
     this.props.createNewRequest(this.props._id, formData, () => {
       this.props.history.push("/dashboard");
     });
@@ -34,7 +36,7 @@ class NewRequest extends Component {
         <NewNewsletterForm
           formTitle="New Service Request"
           onCancel={() => this.onCancel()}
-          onSubmit={event => this.onSubmit(event)}
+          onSubmit={this.onSubmit}
           fieldOnePlaceholder="Service Request Title"
           fieldOneTitle="Service Request Title"
           fieldTwoPlaceholder="Service Description Here"

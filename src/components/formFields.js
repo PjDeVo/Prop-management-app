@@ -110,7 +110,7 @@ export class FormImage extends Component {
         />
         <input
           className="form-image__replace"
-          typle="button"
+          type="button"
           value="Replace"
           onClick={() =>
             document.getElementById("file")
