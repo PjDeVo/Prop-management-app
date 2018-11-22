@@ -1,6 +1,7 @@
 import { SET_NEWSLETTERS, FETCH_NEWSLETTER_ID } from "./types";
 
 import axios from "axios";
+import { ROOT_URL } from "../config";
 
 export function fetchNewsletters() {
   return function distpatch() {
@@ -27,9 +28,8 @@ export function fetchNewsletterWithId(id) {
   };
 }
 
-export function createNewNewsletter(userId, formData, success) {
+export function createNewNewsletter(formData, success) {
   const token = localStorage.getItem("token");
-  console.log(formData);
   return function() {
     axios
       .post(`${ROOT_URL}/newsletters/new`, formData, {

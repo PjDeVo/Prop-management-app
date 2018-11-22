@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { conntect } from "raect-redux";
+import { connect } from "react-redux";
 import * as actions from "../../actions";
 import NewNewsletterForm from "./newsletterNewForm";
 
@@ -12,7 +12,7 @@ class NewNewsletter extends Component {
     formData.append("body", body);
     formData.append("image", image);
 
-    this.props.createNewNewsletter(this.props._id, formData, () => {
+    this.props.createNewNewsletter(formData, () => {
       this.props.history.push("/dashboard");
     });
   };
