@@ -2,11 +2,13 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 import * as actions from "../../actions";
+
 import NewNewsletterForm from "./newsletterNewForm";
 
 class NewNewsletter extends Component {
   onSubmit = fields => {
     const { title, body, image } = fields;
+
     var formData = new FormData();
     formData.append("title", title);
     formData.append("body", body);
@@ -25,13 +27,13 @@ class NewNewsletter extends Component {
     return (
       <div className="new-newsletter">
         <NewNewsletterForm
-          formTitle="New Newsletter"
           onCancel={() => this.onCancel()}
           onSubmit={event => this.onSubmit(event)}
+          formTitle="New Newsletter"
           fieldOnePlaceholder="Newsletter Title"
           fieldOneTitle="Newsletter Title"
           fieldTwoPlaceholder="Body Here"
-          fieldTwoTitle="Description"
+          fieldTwoTitle="Body"
         />
       </div>
     );

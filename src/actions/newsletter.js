@@ -4,7 +4,7 @@ import axios from "axios";
 import { ROOT_URL } from "../config";
 
 export function fetchNewsletters() {
-  return function distpatch() {
+  return function(dispatch) {
     const token = localStorage.getItem("token");
     const headers = { headers: { authorization: token } };
     axios
@@ -32,7 +32,7 @@ export function createNewNewsletter(formData, success) {
   const token = localStorage.getItem("token");
   return function() {
     axios
-      .post(`${ROOT_URL}/newsletters/new`, formData, {
+      .post(`${ROOT_URL}/newsletter/new`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           authorization: token
