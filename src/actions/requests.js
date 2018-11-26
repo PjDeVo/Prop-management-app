@@ -15,7 +15,7 @@ export function createNewRequest(userId, formData, success) {
   console.log(formData);
   return function() {
     axios
-      .post(`${ROOT_URL}/request/new`, formData, {
+      .post(`${ROOT_URL}/requests/new`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           authorization: token
